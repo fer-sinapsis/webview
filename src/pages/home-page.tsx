@@ -3,10 +3,12 @@ import styled from "@mui/material/styles/styled";
 import Box from "@mui/material/Box";
 import CameraAltRoundedIcon from "@mui/icons-material/CameraAltRounded";
 import { Button, Icon, IconButton, Typography } from "@mui/material";
+import { PhoneUtils } from "../utils/phone-utils";
+import Footer from "../components/footer/footer";
 
 const Container = styled(Box)(({ theme }) => {
   return {
-    height: "100vh",
+    height: "100%",
     width: "100vw",
     display: "flex",
     justifyContent: "center",
@@ -26,18 +28,6 @@ const TypographyStyled = styled(Typography)(({ theme }) => {
 });
 
 const HomePage = () => {
-  function grantCameraPermission() {
-    const event = {
-      type: "camera_permission",
-      hasPermission: true,
-    };
-    sendMessageToFlutter(event);
-  }
-
-  function sendMessageToFlutter(message: any) {
-    window.ReactNativeWebView.postMessage(JSON.stringify(message));
-  }
-
   return (
     <Container>
       <TypographyStyled variant="h2">Press to open Camera</TypographyStyled>
@@ -45,9 +35,9 @@ const HomePage = () => {
         color="primary"
         aria-label="upload picture"
         component="span"
-        onClick={grantCameraPermission}
+        onClick={PhoneUtils.cameraPermissions}
       >
-        <CameraAltRoundedIcon fontSize="large"/>
+        <CameraAltRoundedIcon fontSize="large" />
       </IconButton>
     </Container>
   );
