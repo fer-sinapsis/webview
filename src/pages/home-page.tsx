@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "@mui/material/styles/styled";
 import Box from "@mui/material/Box";
-import { Button, Typography } from "@mui/material";
+import CameraAltRoundedIcon from "@mui/icons-material/CameraAltRounded";
+import { Button, Icon, IconButton, Typography } from "@mui/material";
 
-const Container = styled(Box)(({theme}) => {
+const Container = styled(Box)(({ theme }) => {
   return {
     height: "100vh",
     width: "100vw",
@@ -14,23 +15,12 @@ const Container = styled(Box)(({theme}) => {
   };
 });
 
-const TypographyStyled = styled(Typography)(({theme}) => {
+const TypographyStyled = styled(Typography)(({ theme }) => {
   return {
     fontSize: "48px",
     marginBottom: "20px",
     [theme.breakpoints.down("sm")]: {
       fontSize: "24px",
-    },
-  };
-});
-
-const NewButton = styled(Button)(() => {
-  return {
-    backgroundColor: "red",
-    color: "white",
-    boxShadow: "unset",
-    "&:hover": {
-      backgroundColor: "blue",
     },
   };
 });
@@ -50,12 +40,15 @@ const HomePage = () => {
 
   return (
     <Container>
-      <TypographyStyled variant="h2">
-        Press to open Camera
-      </TypographyStyled>
-      <NewButton onClick={grantCameraPermission}>
-        Grant Camera Permission
-      </NewButton>
+      <TypographyStyled variant="h2">Press to open Camera</TypographyStyled>
+      <IconButton
+        color="primary"
+        aria-label="upload picture"
+        component="span"
+        onClick={grantCameraPermission}
+      >
+        <CameraAltRoundedIcon fontSize="large"/>
+      </IconButton>
     </Container>
   );
 };
