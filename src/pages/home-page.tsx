@@ -3,7 +3,7 @@ import styled from "@mui/material/styles/styled";
 import Box from "@mui/material/Box";
 import { Button, Typography } from "@mui/material";
 
-const Container = styled(Box)(() => {
+const Container = styled(Box)(({theme}) => {
   return {
     height: "100vh",
     width: "100vw",
@@ -11,6 +11,21 @@ const Container = styled(Box)(() => {
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
+    [theme.breakpoints.down("sm")]: {
+      height: "100%",
+      padding: "10px 20px",
+      justifyContent: "center",
+    },
+  };
+});
+
+const TypographyStyled = styled(Typography)(({theme}) => {
+  return {
+    fontSize: "48px",
+    marginBottom: "20px",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "24px",
+    },
   };
 });
 
@@ -40,9 +55,9 @@ const HomePage = () => {
 
   return (
     <Container>
-      <Typography variant="h2" component="h1">
+      <TypographyStyled variant="h2">
         Press to open Camera
-      </Typography>
+      </TypographyStyled>
       <NewButton onClick={grantCameraPermission}>
         Grant Camera Permission
       </NewButton>
