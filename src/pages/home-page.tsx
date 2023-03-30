@@ -6,7 +6,7 @@ import { Button, Typography } from "@mui/material";
 const Container = styled(Box)(() => {
   return {
     height: "100vh",
-    width: "100%",
+    width: "100vw",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
