@@ -40,7 +40,7 @@ const HomePage = () => {
 
   return (
     <Container>
-      <Typography variant="h1" component="h1">
+      <Typography variant="h2" component="h1">
         Press to open Camera
       </Typography>
       <NewButton onClick={grantCameraPermission}>
