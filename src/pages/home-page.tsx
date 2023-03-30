@@ -11,11 +11,6 @@ const Container = styled(Box)(({theme}) => {
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
-    [theme.breakpoints.down("sm")]: {
-      height: "100%",
-      padding: "10px 20px",
-      justifyContent: "center",
-    },
   };
 });
 
