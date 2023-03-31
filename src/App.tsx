@@ -5,6 +5,7 @@ import HomePage from './pages/home-page';
 import Footer from './components/footer/footer';
 import { Box, styled, useMediaQuery, useTheme } from '@mui/material';
 import GalleryPage from './pages/gallery';
+import Navbar from './components/navbar/navbar';
 
 const Container = styled(Box)(({ theme }) => {
   return {
@@ -28,7 +29,7 @@ const App: React.FC = () => {
         <Route path="/webview" element={<HomePage />} />
         <Route path="/webview/gallery" element={<GalleryPage />} />
       </Routes>
-      {upMd ? <Footer /> : null}
+      {upMd ? <Footer /> : <Navbar/>}
     </div>
   </BrowserRouter>
   );

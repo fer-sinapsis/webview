@@ -30,6 +30,8 @@ const Footer = () => {
   const handleTabClick = (to: To) => {
     navigate(to);
   };
+
+  
   return (
     <StyledTabs
       value={value}

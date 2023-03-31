@@ -27,7 +27,7 @@ const TypographyStyled = styled(Typography)(({ theme }) => {
   };
 });
 
-const HomePage = () => {
+const HomePage: React.FC = () => {
   return (
     <Container>
       <TypographyStyled variant="h2">Press to open Camera</TypographyStyled>
