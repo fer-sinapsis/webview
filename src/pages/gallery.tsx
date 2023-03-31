@@ -38,7 +38,7 @@ const GalleryPage = () => {
           backgroundColor: "#ffffff",
           boxShadow: "0px 2px 10px rgba(0, 0, 0, 0.4)",
          }}
-        onClick={PhoneUtils.cameraPermissions}
+        onClick={PhoneUtils.galleryPermissions}
       >
         <PhotoRoundedIcon fontSize="large" />
       </IconButton>
