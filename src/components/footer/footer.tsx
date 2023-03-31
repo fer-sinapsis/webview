@@ -3,7 +3,7 @@ import { styled } from "@mui/system";
 import { Tab, Tabs } from "@mui/material";
 import { NavLink, To, useNavigate } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
-import InfoIcon from "@mui/icons-material/Info";
+import PhotoIcon from '@mui/icons-material/Photo';
 import ContactMailIcon from "@mui/icons-material/ContactMail";
 import SettingsIcon from "@mui/icons-material/Settings";
 
@@ -46,11 +46,11 @@ const Footer = () => {
         to="/webview"
       />
       <Tab
-        icon={<InfoIcon />}
-        label="Info"
-        onClick={() => handleTabClick("/info")}
+        icon={<PhotoIcon />}
+        label="Gallery"
+        onClick={() => handleTabClick("/gallery")}
         component={NavLink}
-        to="/info"
+        to="/webview/gallery"
       />
       <Tab
         icon={<ContactMailIcon />}

@@ -7,6 +7,14 @@ export const PhoneUtils = {
     sendMessageToFlutter(event);
   },
 
+  galleryPermissions: () => {
+    const event = {
+      type: "gallery_permission",
+      hasPermission: true,
+    };
+    sendMessageToFlutter(event);
+  }
+
 };
 
 function sendMessageToFlutter(event: { type: string, hasPermission: boolean }) {

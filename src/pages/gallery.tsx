@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "@mui/material/styles/styled";
 import Box from "@mui/material/Box";
-import CameraAltRoundedIcon from "@mui/icons-material/CameraAltRounded";
+import PhotoRoundedIcon from '@mui/icons-material/PhotoRounded';
 import { Button, Icon, IconButton, Typography } from "@mui/material";
 import { PhoneUtils } from "../utils/phone-utils";
-import Footer from "../components/footer/footer";
 
 const Container = styled(Box)(({ theme }) => {
   return {
@@ -27,10 +26,10 @@ const TypographyStyled = styled(Typography)(({ theme }) => {
   };
 });
 
-const HomePage = () => {
+const GalleryPage = () => {
   return (
     <Container>
-      <TypographyStyled variant="h2">Press to open Camera</TypographyStyled>
+      <TypographyStyled variant="h2">Open Gallery to select a Photo</TypographyStyled>
       <IconButton
         color="primary"
         aria-label="upload picture"
@@ -41,10 +40,10 @@ const HomePage = () => {
          }}
         onClick={PhoneUtils.cameraPermissions}
       >
-        <CameraAltRoundedIcon fontSize="large" />
+        <PhotoRoundedIcon fontSize="large" />
       </IconButton>
     </Container>
   );
 };
 
-export default HomePage;
+export default GalleryPage;

@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Link, BrowserRouter } from 'rea
 import HomePage from './pages/home-page';
 import Footer from './components/footer/footer';
 import { Box, styled, useMediaQuery, useTheme } from '@mui/material';
+import GalleryPage from './pages/gallery';
 
 const Container = styled(Box)(({ theme }) => {
   return {
@@ -25,6 +26,7 @@ const App: React.FC = () => {
     <div>
       <Routes>
         <Route path="/webview" element={<HomePage />} />
+        <Route path="/webview/gallery" element={<GalleryPage />} />
       </Routes>
       {upMd ? <Footer /> : null}
     </div>
