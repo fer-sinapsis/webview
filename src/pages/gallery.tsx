@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "@mui/material/styles/styled";
 import Box from "@mui/material/Box";
 import PhotoRoundedIcon from '@mui/icons-material/PhotoRounded';
@@ -27,6 +27,23 @@ const TypographyStyled = styled(Typography)(({ theme }) => {
 });
 
 const GalleryPage = () => {
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  useEffect(() => {
+    function handleMessage(event : any) {
+      const data = event.data;
+      if (data.type === 'selected_image') {
+        setSelectedImage(data.base64Image);
+      }
+    }
+
+    window.addEventListener('message', handleMessage);
+    return () => {
+      window.removeEventListener('message', handleMessage);
+    };
+  }, []);
+
+
   return (
     <Container>
       <TypographyStyled variant="h2">Open Gallery to select a Photo</TypographyStyled>
@@ -42,6 +59,9 @@ const GalleryPage = () => {
       >
         <PhotoRoundedIcon fontSize="large" />
       </IconButton>
+      <Box sx={{ width: 300, height: 300, bgcolor: 'background.paper', border: '1px solid black' }}>
+        {selectedImage && <img src={`data:image/png;base64,${selectedImage}`} alt="Selected" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />}
+      </Box>
     </Container>
   );
 };
