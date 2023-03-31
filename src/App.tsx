@@ -1,17 +1,3 @@
-// import HomePage from "./pages/home-page";
-
-// function App() {
-//   return (
-//     <>
-//       <HomePage />
-//     </>
-//   );
-// }
-
-// export default App;
-
-
-
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, BrowserRouter } from 'react-router-dom';
 
@@ -39,9 +25,6 @@ const App: React.FC = () => {
     <div>
       <Routes>
         <Route path="/webview" element={<HomePage />} />
-        {/* <Route path="/info" element={<Info />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/settings" element={<Settings />} /> */}
       </Routes>
       {upMd ? <Footer /> : null}
     </div>
