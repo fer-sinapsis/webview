@@ -26,6 +26,16 @@ const TypographyStyled = styled(Typography)(({ theme }) => {
   };
 });
 
+const ImageContainer = styled(Box)(({ theme }) => {
+  return {
+    width: 300,
+    height: 300,
+    bgcolor: 'background.paper',
+    border: '1px solid black',
+    marginTop: 20,
+  };
+});
+
 const GalleryPage = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -59,9 +69,9 @@ const GalleryPage = () => {
       >
         <PhotoRoundedIcon fontSize="large" />
       </IconButton>
-      <Box sx={{ width: 300, height: 300, bgcolor: 'background.paper', border: '1px solid black' }}>
+      <ImageContainer>
         {selectedImage && <img src={`data:image/png;base64,${selectedImage}`} alt="Selected" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />}
-      </Box>
+      </ImageContainer>
     </Container>
   );
 };
